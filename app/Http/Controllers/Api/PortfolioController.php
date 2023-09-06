@@ -14,6 +14,10 @@ class PortfolioController extends Controller
         
         //Creazione API che restituisce i lavori del portfolio
         $works = Portfolio::all();
+
+        //NON FUNZIONA 
+        // $works = Portfolio::with('type','technologies')->paginate(3);
+       
         return response()->json([
             'success' => true,
             'results' => $works,
